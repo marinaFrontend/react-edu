@@ -1,0 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic);
+body,
+html {
+    margin: 0;
+    font-family: muli, serif;
+    height: 100%;
+    padding: 0;
+    overflow-x:hidden;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}

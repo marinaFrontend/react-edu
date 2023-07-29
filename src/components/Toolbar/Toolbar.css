@@ -1,0 +1,31 @@
+.toolbar {
+    margin: 20px 0;
+}
+
+.toolbar-item {
+    background-color: #ffffff;
+    outline: none;
+    border: 1px solid #595959;
+    padding: 6px 12px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.toolbar-item:hover {
+    background-color: #cccccc;
+    border-color: #cccccc;
+}
+
+.toolbar-item:first-child {
+    margin-left: 0;
+}
+
+.toolbar-item:last-child {
+    margin-right: 0;
+}
+
+.toolbar-item.active {
+    color: #ffffff;
+    background-color: #595959;
+}

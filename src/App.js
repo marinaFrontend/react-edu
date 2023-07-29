@@ -1,8 +1,11 @@
 import './App.css';
+import Portfolio from './components/Portfolio/Portfolio';
 
 function App() {
   return (
-    <div className="App">App</div>
+    <div className="container">
+      <Portfolio/>
+    </div>
   );
 }
 
