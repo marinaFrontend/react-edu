@@ -5,6 +5,7 @@ import './Toolbar.css';
 const propTypes = {
   filters: PropTypes.array,
   selected: PropTypes.string,
+  onSelectFilter: PropTypes.func,
 };
 
 const defaultProps = {
@@ -16,20 +17,18 @@ class Toolbar extends Component {
   render() {
     const {filters, selected, onSelectFilter} = this.props;
 
-    const ToolbarItems = filters.map((filter) =>
-        <button
-          key={filter}
-          type="button"
-          className={`toolbar-item ${selected === filter ? 'active' : ''}`}
-          onClick={() => onSelectFilter(filter)}
-        >
-          {filter}
-        </button>
-    )
+    const ToolbarItems = filters.map((filter) => (
+      <button
+        key={filter}
+        type="button"
+        className={`toolbar-item ${selected === filter ? 'active' : ''}`}
+        onClick={() => onSelectFilter(filter)}
+      >
+        {filter}
+      </button>
+    ));
 
-    return (
-        <div className="toolbar">{ToolbarItems}</div>
-    );
+    return <div className="toolbar">{ToolbarItems}</div>;
   }
 }
 

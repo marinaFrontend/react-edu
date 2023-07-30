@@ -14,21 +14,13 @@ class ProjectList extends Component {
   render() {
     const {projects} = this.props;
 
-    const ProjectListItems = projects.map((project, index) =>
-      <div
-        key={index}
-        className="project-list-item"
-      >
-        <img
-          src={project.img}
-          alt={project.category}
-        />
+    const ProjectListItems = projects.map((project, index) => (
+      <div key={index} className="project-list-item d-flex flex-grow-1">
+        <img src={project.img} alt={project.category} />
       </div>
-    )
+    ));
 
-    return (
-      <div className="project-list">{ProjectListItems}</div>
-    );
+    return <div className="project-list d-flex flex-wrap">{ProjectListItems}</div>;
   }
 }
 
