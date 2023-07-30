@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './IconSwitch.css';
 
 const propTypes = {
   icon: PropTypes.string,
@@ -11,7 +12,9 @@ const defaultProps = {
 
 const IconSwitch = ({icon, onSwitch}) => {
   return (
-      <div>IconSwitch</div>
+    <button className="icon-switch" type="button" onClick={onSwitch}>
+      <i className="material-icons">{icon}</i>
+    </button>
   );
 };
 

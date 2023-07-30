@@ -1,0 +1,8 @@
+.store-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+}
+.store-list {
+    padding: 0 24px;
+}
