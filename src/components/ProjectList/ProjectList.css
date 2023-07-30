@@ -1,19 +1,29 @@
 .project-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: start;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
 .project-list-item {
     margin: 4px;
-    flex-grow: 1;
     border: 1px solid #595959;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
 }
 
 .project-list-item img {
-    object-fit: cover;
     width: 100%;
     height: 100%;
     max-height: 200px;
+    object-fit: cover;
 }
