@@ -1,8 +1,11 @@
 import './App.css';
+import Store from "./components/Store/Store";
 
 function App() {
   return (
-    <div className="App">App</div>
+    <div className="container">
+        <Store/>
+    </div>
   );
 }
 
