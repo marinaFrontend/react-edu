@@ -5,14 +5,16 @@ module.exports = {
     node: true,
   },
   extends: ['plugin:react/recommended', 'eslint:recommended', 'plugin:prettier/recommended'],
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    parser: '@babel/eslint-parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
     allowImportExportEverywhere: false,
     ecmaFeatures: {
       globalReturn: false,
       jsx: true,
+      modules: true,
+      experimentalObjectRestSpread: true,
     },
   },
   plugins: ['react', 'prettier'],
@@ -20,6 +22,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
+    'react/state-in-constructor': [0, 'never'],
     'jsx-quotes': [1, 'prefer-double'],
     'prettier/prettier': [
       'error',
