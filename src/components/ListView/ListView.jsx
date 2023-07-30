@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import ShopItem from './ShopItem/ShopItem';
 
-import './ListView.css';
-
 const propTypes = {
   items: PropTypes.array,
 };
@@ -13,9 +11,11 @@ const defaultProps = {
 
 const ListView = ({items}) => {
   return (
-    <div className="list-view">
-      {items.map((item, id) => (
-        <ShopItem key={id} item={item} />
+    <div className="row">
+      {items.map((item, index) => (
+        <div key={index} className="col-12">
+          <ShopItem item={item} />
+        </div>
       ))}
     </div>
   );

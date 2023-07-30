@@ -12,7 +12,11 @@ const defaultProps = {
 
 const IconSwitch = ({icon, onSwitch}) => {
   return (
-    <button className="icon-switch" type="button" onClick={onSwitch}>
+    <button
+      className="icon-switch d-inline-flex align-items-center justify-content-center"
+      type="button"
+      onClick={onSwitch}
+    >
       <i className="material-icons">{icon}</i>
     </button>
   );

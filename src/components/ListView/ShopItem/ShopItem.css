@@ -1,0 +1,25 @@
+.shop-item {
+    background-color: #f5f5f5;
+}
+
+.shop-item-title {
+    text-transform: uppercase;
+}
+
+.shop-item-img {
+    max-width: 100px;
+    height: auto;
+}
+
+.shop-item-button {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #dc3545;
+    margin: 0;
+    padding: 6px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 25px;
+    color: #dc3545;
+    cursor: pointer;
+}

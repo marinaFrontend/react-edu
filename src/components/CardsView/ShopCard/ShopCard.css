@@ -1,0 +1,27 @@
+.shop-card {
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.shop-card-title {
+    text-transform: uppercase;
+}
+
+.shop-card-img {
+    max-width: 250px;
+    height: auto;
+}
+
+.shop-card-button {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #dc3545;
+    margin: 0;
+    padding: 6px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 25px;
+    color: #dc3545;
+    cursor: pointer;
+}

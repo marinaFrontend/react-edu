@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import products from '../../mockup/products.json';
-import './Store.css';
 
 import IconSwitch from '../IconSwitch/IconSwitch';
 import ListView from '../ListView/ListView';
+import CardsView from '../CardsView/CardsView';
 
 const Store = () => {
   const initialState = {icon: 'view_module', products};
@@ -12,19 +12,21 @@ const Store = () => {
   const handleChangeView = () => {
     setState({
       ...state,
-      icon: '',
+      icon: `view_${state.icon === 'view_module' ? 'list' : 'module'}`,
     });
   };
 
   return (
-    <div className="store">
-      <div className="store-header">
+    <>
+      <div className="d-flex align-items-center justify-content-end py-4">
         <IconSwitch icon={state.icon} onSwitch={handleChangeView} />
       </div>
-      <div className="store-list">
+      {state.icon === 'view_module' ? (
+        <CardsView items={state.products} />
+      ) : (
         <ListView items={state.products} />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
