@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
+    "prettier": "3.0.0",
     "prop-types": "^15.8.1"
   },
   "scripts": {
@@ -26,6 +27,14 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "bracketSameLine": false,
+    "endOfLine": "auto"
   },
   "browserslist": {
     "production": [
