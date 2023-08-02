@@ -4,8 +4,14 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ['plugin:react/recommended', 'eslint:recommended', 'plugin:prettier/recommended'],
-  parser: '@babel/eslint-parser',
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  //parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -17,7 +23,7 @@ module.exports = {
       experimentalObjectRestSpread: true,
     },
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'error',
