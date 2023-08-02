@@ -4,9 +4,16 @@ module.exports = {
     browser: true,
     node: true,
   },
+  settings: {
+    react: {
+      pragma: 'React',
+      version: 'detect',
+    },
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
