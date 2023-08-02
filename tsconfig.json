@@ -11,8 +11,10 @@
     "lib": [
       "dom",
       "es2015"
-    ],                                                 /* Specify a set of bundled library declaration files that describe the target runtime environment. */
-    "jsx": "react",                                /* Specify what JSX code is generated. */
+    ],                                                   /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    "jsx": "react",                                      /* Specify what JSX code is generated. */
+    "sourceMap": true,                                   /* Create source map files for emitted JavaScript files. */
+
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */
@@ -61,7 +63,6 @@
     // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
     // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
-    // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
     // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
