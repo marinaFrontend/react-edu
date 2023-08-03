@@ -6,7 +6,7 @@ interface ListingProps {
   items: Product[];
 }
 
-const getPrice = (currencyCode: string | undefined, price: string | undefined) => {
+const getPrice = (currencyCode?: string, price?: string) => {
   switch (currencyCode) {
     case 'USD':
       return `$${price}`;
@@ -17,7 +17,7 @@ const getPrice = (currencyCode: string | undefined, price: string | undefined) =
   }
 };
 
-const getQuantityColor = (quantity: number | undefined) => {
+const getQuantityColor = (quantity?: number) => {
   if (!quantity) return 'low';
   return quantity < 11 ? 'low' : quantity < 21 ? 'medium' : 'high';
 };
@@ -36,7 +36,7 @@ export const Listing = ({items}: ListingProps) => {
           </a>
         </div>
         <div className="item-details">
-          <p className="item-title">{cropString(item.title, 50)}</p>
+          {item.title && <p className="item-title">{cropString(item.title, 50)}</p>}
           <p className="item-price">{getPrice(item.currency_code, item.price)}</p>
           <p className={`item-quantity level-${getQuantityColor(item.quantity)}`}>
             {item.quantity} left
