@@ -1,9 +1,26 @@
 import React from 'react';
 import {Product} from '../../models/product';
+import {cropString} from '../../helpers/utils';
 
 interface ListingProps {
   items: Product[];
 }
+
+const getPrice = (currencyCode: string | undefined, price: string | undefined) => {
+  switch (currencyCode) {
+    case 'USD':
+      return `$${price}`;
+    case 'EUR':
+      return `€${price}`;
+    default:
+      return `${price} ${currencyCode}`;
+  }
+};
+
+const getQuantityColor = (quantity: number | undefined) => {
+  if (!quantity) return 'low';
+  return quantity < 11 ? 'low' : quantity < 21 ? 'medium' : 'high';
+};
 
 export const Listing = ({items}: ListingProps) => {
   const productsList = items
@@ -19,12 +36,11 @@ export const Listing = ({items}: ListingProps) => {
           </a>
         </div>
         <div className="item-details">
-          <p className="item-title">{item.title}</p>
-          <p className="item-price">
-            <span>{item.currency_code} </span>
-            <span>{item.price}</span>
+          <p className="item-title">{cropString(item.title, 50)}</p>
+          <p className="item-price">{getPrice(item.currency_code, item.price)}</p>
+          <p className={`item-quantity level-${getQuantityColor(item.quantity)}`}>
+            {item.quantity} left
           </p>
-          <p className="item-quantity level-medium">{item.quantity} left</p>
         </div>
       </div>
     ));
