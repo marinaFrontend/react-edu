@@ -1,0 +1,14 @@
+.converter-colors-form input {
+  width: 100%;
+  height: 60px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.converter-colors-form input[readonly] {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}

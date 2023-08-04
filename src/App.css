@@ -6,10 +6,17 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   font-family: muli, serif;
   line-height: 1.3;
+  background: linear-gradient(230deg, #a24bcf, #4b79cf, #4bc5cf);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }
 
 *,::before,::after {

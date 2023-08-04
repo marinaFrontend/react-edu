@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import {ConverterColors} from './components/ConverterColors/ConverterColors';
 
 function App() {
-  return <div className="container">App</div>;
+  return <ConverterColors />;
 }
 
 export default App;
