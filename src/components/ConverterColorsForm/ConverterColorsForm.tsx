@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {convertToRGB} from '../../helpers/utils';
 import './ConverterColorsForm.css';
 
-interface ConverterColorFormProps {
+interface ConverterColorsFormProps {
   changeBgColor: (value: string) => void;
 }
 
-interface IConverterColorForm {
+interface IConverterColorsForm {
   hexColor: string;
   rgbColor: string;
 }
@@ -14,8 +14,8 @@ interface IConverterColorForm {
 const patternHexColor = new RegExp('^#[a-fA-F0-9]{6}$');
 const errorColor = '#e94b35';
 
-export const ConverterColorForm = ({changeBgColor}: ConverterColorFormProps) => {
-  const [form, setForm] = useState<IConverterColorForm>({
+export const ConverterColorsForm = ({changeBgColor}: ConverterColorsFormProps) => {
+  const [form, setForm] = useState<IConverterColorsForm>({
     hexColor: '',
     rgbColor: '',
   });

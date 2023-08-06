@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './ConverterColors.css';
 
-import {ConverterColorForm} from '../ConverterColorForm/ConverterColorsForm';
+import {ConverterColorsForm} from '../ConverterColorsForm/ConverterColorsForm';
 
 export const ConverterColors = () => {
   const [state, setState] = useState({
@@ -22,7 +22,7 @@ export const ConverterColors = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-4 col-xl-2">
-            <ConverterColorForm changeBgColor={handleChangeBgColor} />
+            <ConverterColorsForm changeBgColor={handleChangeBgColor} />
           </div>
         </div>
       </div>
