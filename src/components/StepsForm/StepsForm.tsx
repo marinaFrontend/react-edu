@@ -15,15 +15,23 @@ interface StepsFormProps {
   onSubmit: (item: StepsTableItem) => void;
 }
 
+const validationRules = {
+  distance: '^(?=.+)(?:[1-9]\\d*|0)?(?:\\.\\d+)?$',
+};
+
 export const StepsForm = ({labels, onSubmit}: StepsFormProps) => {
   const [startDate, setStartDate] = useState(new Date());
-  const [form, setForm] = useState({
-    date: '',
+  const [formData, setFormData] = useState({
+    date: getFormattedDate(startDate),
     distance: 0,
+  });
+  const [formValid, setFormValid] = useState({
+    distance: false,
   });
 
   const resetForm = () => {
-    setForm({date: '', distance: 0});
+    setFormData({date: getFormattedDate(startDate), distance: 0});
+    setFormValid({distance: false});
   };
 
   const getLabel = (key: string) => {
@@ -32,22 +40,30 @@ export const StepsForm = ({labels, onSubmit}: StepsFormProps) => {
   };
 
   const handleChangeDate = (date: Date | null) => {
-    console.log(date);
     if (date) {
       setStartDate(date);
-      setForm((prevForm) => ({...prevForm, date: getFormattedDate(date)}));
+      setFormData((prevFormData) => ({...prevFormData, date: getFormattedDate(date)}));
     }
   };
 
   const handleChangeField = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
-    setForm((prevForm) => ({...prevForm, [name]: value}));
+    const pattern = new RegExp(validationRules[name as keyof typeof validationRules]);
+
+    setFormData((prevFormData) => ({...prevFormData, [name]: value}));
+    setFormValid((prevFormValid) => ({
+      ...prevFormValid,
+      [name]: pattern ? pattern.test(value) : true,
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit({id: uuidv4(), ...form});
-    resetForm();
+
+    if (Object.values(formValid).every((item) => item === true)) {
+      onSubmit({id: uuidv4(), ...formData});
+      resetForm();
+    }
   };
 
   return (
@@ -74,10 +90,10 @@ export const StepsForm = ({labels, onSubmit}: StepsFormProps) => {
           id="distanceInput"
           type="number"
           name="distance"
-          value={form.distance}
+          value={formData.distance}
           required
           onChange={handleChangeField}
-          className="form-control"
+          className={`form-control ${formValid.distance ? '' : 'is-invalid'}`}
           placeholder="Введите пройденную дистанцию"
         />
       </div>

@@ -21,24 +21,21 @@ export const StepsTable = ({headers, items, onRemoveItem}: StepsTableProps) => {
         </tr>
       </thead>
       <tbody>
-        {
-          // todo сортировка по дате
-          items.map((item) => (
-            <tr key={item.id}>
-              <td>{item.date}</td>
-              <td>{item.distance}</td>
-              <td>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger btn-sm"
-                  onClick={() => onRemoveItem(item.id)}
-                >
-                  Удалить
-                </button>
-              </td>
-            </tr>
-          ))
-        }
+        {items.map((item) => (
+          <tr key={item.id}>
+            <td>{item.date}</td>
+            <td>{item.distance}</td>
+            <td>
+              <button
+                type="button"
+                className="btn btn-outline-danger btn-sm"
+                onClick={() => onRemoveItem(item.id)}
+              >
+                Удалить
+              </button>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
