@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Cat 1",
+    "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "href": "#",
+    "imgSrc": "https://placekitten.com/640/360"
+  },
+  {
+    "id": 2,
+    "title": "Cat 2",
+    "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "href": "#",
+    "imgSrc": "https://placekitten.com/640/360"
+  },
+  {
+    "id": 3,
+    "title": "Cat 3",
+    "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "href": "#",
+    "imgSrc": "https://placekitten.com/640/360"
+  },
+  {
+    "id": 4,
+    "title": "Cat without image",
+    "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "href": "#"
+  }
+]
