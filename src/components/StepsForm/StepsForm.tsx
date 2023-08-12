@@ -23,14 +23,14 @@ export const StepsForm = ({labels, onSubmit}: StepsFormProps) => {
   const [startDate, setStartDate] = useState(new Date());
   const [formData, setFormData] = useState({
     date: getFormattedDate(startDate),
-    distance: 0,
+    distance: '',
   });
   const [formValid, setFormValid] = useState({
     distance: false,
   });
 
   const resetForm = () => {
-    setFormData({date: getFormattedDate(startDate), distance: 0});
+    setFormData({date: getFormattedDate(startDate), distance: ''});
     setFormValid({distance: false});
   };
 

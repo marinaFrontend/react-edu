@@ -1,7 +1,7 @@
 export type StepsTableItem = {
   id: string;
   date: string;
-  distance: number;
+  distance: string;
 };
 
 export type StepsLabelItem = {

@@ -22,13 +22,13 @@ export const StepsView = () => {
       setTable(
         table.map((row) =>
           row.date === item.date
-            ? {...row, distance: Number(row.distance) + Number(item.distance)}
+            ? {...row, distance: String(Number(row.distance) + Number(item.distance))}
             : row
         )
       );
     } else setTable((prevTable) => [...prevTable, item]);
 
-    setTable((prevTable) => sortByDate(prevTable, 'date'));
+    setTable((prevTable) => sortByDate<StepsTableItem>(prevTable, 'date'));
   };
 
   const handleRemoveItem = (id: string) => {
