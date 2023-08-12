@@ -24,6 +24,9 @@
     "eslint-plugin-react": "^7.33.1",
     "prettier": "2.5.1",
     "prop-types": "^15.8.1",
+    "react-styleguidist": "^13.1.1",
+    "sass": "^1.65.1",
+    "sass-loader": "^13.3.2",
     "typescript": "^3.2.1"
   },
   "scripts": {
